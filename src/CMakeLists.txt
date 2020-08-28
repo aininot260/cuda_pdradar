@@ -1,0 +1,23 @@
+set(PD_RADAR_SRC
+    ${CMAKE_CURRENT_SOURCE_DIR}/lfm.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/pc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mti.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mtd.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cfar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/window.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils.cpp
+    PARENT_SCOPE
+)
+
+if (GPUACCELERATED)
+set(PD_RADAR_GPU_SRC
+    ${CMAKE_CURRENT_SOURCE_DIR}/pc_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/mti_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/mtd_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/cfar_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/api_gpu.cu
+    ${CMAKE_CURRENT_SOURCE_DIR}/scan.cu
+    PARENT_SCOPE
+)
+endif()
